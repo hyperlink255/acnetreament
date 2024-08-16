@@ -53,6 +53,18 @@ header .logo{
 header .logo i{
     color:var(--green)
 }
+.hamburger{
+    border: 3px solid #00000063;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    display: none;
+    border-radius: 5px;
+    line-height: 45px;
+    font-size: 25px;
+    color:#00000063;
+
+}
 
 header .navbar a{
     font-size:1.7rem;
@@ -61,10 +73,15 @@ header .navbar a{
     color:var(--light-color);
 
 }
-.btn1 a{
+.btn1{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+}
+.btn1 .btnclass{
     background-color: #5685fa;
     width: 180px;
-    padding: 12px 24px;
+    padding: 16px 24px;
     color:#fff;
     font-size: 16px;
     font-weight: 400;
@@ -81,12 +98,11 @@ header .icons #menu-bars{
     display:none;
 }
 .hero-section{
+    position: relative;
+}
+.hero-section img{
     width: 100%;
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('./images/Landing-Page-min.png');
+   
 }
 .btn{
     margin-top:1rem;
@@ -235,6 +251,9 @@ justify-content: center;
 	position: relative;
 	z-index: 1;
 	color: #404040;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 	font-size: 16px;
 	font-weight: 600;
 	display: block;
@@ -549,7 +568,7 @@ width:100%;
     color:var(--green);
 }
 
-@media(max-width:1200px){
+@media screen and (max-width:1200px){
     .counter-menu{
         margin: 0;
     }
@@ -559,6 +578,56 @@ width:100%;
     .d-flex{
         flex-direction: column;
     }
+    .hero-section{
+    
+        height: auto;
+        
+        
+    }
+    .row-reverse{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .col-4{
+        width: 47.99999%;
+    }
+
+
+}
+@media(max-width:755px){
+    .navbar{
+        position: absolute;
+        top:100%;
+        background: #fff;
+        flex-direction: column;
+        display: flex;
+        width: 100%;
+        left: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+    .navbar.active{
+     max-height: 300px;
+    }
+   header .navbar a{
+        padding: 12px 24px;
+
+    }
+    .hamburger{
+        display: block;
+        transition: all 0.3s ease;
+    }
+    .hamburger i.fa-remove{
+        transform: rotate(90deg);
+    }
+    .btn1 .btnclass{
+        width: fit-content;
+    }
+    
+
+
+
 }
 
 @media(max-width:991px){
@@ -571,9 +640,16 @@ width:100%;
      section{
         padding:2rem;
     }
+    .about .row .image{
+        width: 100%;
+    }
+    }
 
+@media screen and (max-width:551px){
+.col-4{
+    width: 70.999999%;
 }
-
+}
 @media(max-width:450px){
     html{
         font-size:50%
@@ -585,5 +661,11 @@ width:100%;
      form .inputBox .input{
         width:100%;
     }
-    
+    .about .row .content h3{
+        font-size: 20px;
+    }
+    .col-4{
+        min-width: 99.99999%;
+    }
+
 }
